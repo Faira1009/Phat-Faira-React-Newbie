@@ -22,7 +22,9 @@ function bt6Result() {
 function vowelDel(upperCase) {
     let startStr = "";
     startStr = upperCase;
-    let mainArr1 = startStr.split("")
+    let startStr1 = startStr.replace(/ /g,"")
+    console.log (startStr1)
+    let mainArr1 = startStr1.split("")
     let withoutVowel = [];
     for (let i = 0; i < mainArr1.length; i++) {
         if (mainArr1[i] != "U" && mainArr1[i] != "E" && mainArr1[i] != "O" && mainArr1[i] != "A" && mainArr1[i] != "I") {
