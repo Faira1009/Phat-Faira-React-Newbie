@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import {Header} from '../src/Components/Header'
+import { SearchBar } from '../src/Components/SearchBar';
+import { ShowList } from '../src/Components/ShowList';
 
+import {List} from '../src/resources/emojiList'
 function App() {
+console.log (List)
+let sList = [];
+for (let i = 0; i <10; i++) {
+  sList.push(
+    <ShowList symbol={List[i].symbol} title={List[i].title}/> 
+  )
+}
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment> 
+    <Header/>
+    <SearchBar/>
+    {sList}
+    </React.Fragment>  
   );
 }
 
