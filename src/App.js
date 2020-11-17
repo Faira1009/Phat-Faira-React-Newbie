@@ -8,40 +8,38 @@ import {List} from '../src/resources/emojiList'
 export class App extends React.Component {
   constructor(props) { 
     super (props)
-    this.state = {searchText: "",List:List}
     this.textHandler = this.textHandler.bind(this)
   }
 
-smbl () {
-let  arr = [];
-let mainList = []
-mainList = this.state.List;
-let key = "";
-key = this.state.searchText;
-arr = mainList.filter ((object) => { return object.keywords.indexOf(key) === -1})
-console.log (arr)
-return;
-}
+
 
 textHandler (e) { 
 this.setState({searchText:e.target.value})
 console.log(e.target.value)
 }
 
+makeEmo (emo) {
+  let i = emo.length > 10 ? 10 : emo.length
+  let listOut = []
+  for (let a= 0; a < i; a++) {
+    listOut.push (
+      < ShowList symbol={ emo[a].symbol} title= {emo[a].title}/> 
+    )
+  }
+  return emo;
+}
+filterEmo(searchText,data) {
+  return data.filter((val) => {
+    return val.keywords.indexOf(searchText) !=-1
+  })
+}
   render () {
-    let a = smbl ();
-    if (this.smbl.length < 11) { 
-      for (i= 0; i <= this.smbl.length; i++) { 
-<ShowList  symbol = {a[i].symbol} title = {a[i].title} /> 
-    }
-    
-      
-    }
+    let show = this.makeEmo(filterEmo(this.state.searchText,List))
     return (
       <React.Fragment>
         <Header/> 
         <SearchBar changedText={this.textHandler} /> 
-        <ShowList/> 
+        {show}
       </React.Fragment>
     )
   }
