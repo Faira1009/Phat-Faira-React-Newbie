@@ -8,12 +8,12 @@ export class SearchBar extends React.Component {
        
         
     }
-    showOut () {
+    showOut (e) {
         //hey
                 }
     render () {
         return (
-            <input type="text" placeholder="type in Emoji's name"/>
+            <input onChange={this.showOut} type="text" placeholder="type in Emoji's name"/>
         )
     }
 }
