@@ -1,0 +1,26 @@
+.bigDiv {
+    background-image: url("/src/assets/img/mainUI/backgroundImg.jpeg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    
+}
+.signIn-title {
+    margin-top: 10px;
+    background-color: lightsalmon;
+    text-align: center;
+    color: black;
+}
+
+.smallDiv {
+    width: 60%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+}
