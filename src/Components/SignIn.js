@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Link} from '@reach/router';
 import '../assets/css/signInCss.css'
 
-function SignIn () {
+const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPass] = useState('');
     const signInWithEmailAndPassHandler = (e,email,password) => {
