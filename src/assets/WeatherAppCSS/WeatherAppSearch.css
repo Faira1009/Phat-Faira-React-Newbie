@@ -1,0 +1,10 @@
+.weatherAppSearch {
+    background-color: lightcyan;
+    width: 100vw;
+    height: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}

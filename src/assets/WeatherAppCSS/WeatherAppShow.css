@@ -1,0 +1,33 @@
+.weatherAppShowMainDiv {
+    background-color: rgb(191, 248, 191);
+    width: 125px;
+    height: 200px;
+    margin: 10px 10px;
+    border-radius: 10px;
+    padding: 10px 10px;
+    
+}
+.cityName {
+    
+    font-weight: bold; 
+    text-align: center;
+    height: 30%;
+}
+.temperature {
+   
+    height: 25%;
+    font-size: 32px;
+    text-align: center;
+}
+.icon {
+    
+    height: 20%;
+    font-size: 25px;
+    text-align: center;
+}
+.weatherState {
+    
+    height: 25%;
+    font-size: 20px;
+    text-align: center;
+}
