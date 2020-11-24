@@ -4,32 +4,51 @@ import {WeatherAppSearch} from '../src/Components/WeatherApp/WeatherAppSearch'
 import {WeatherAppShow} from '../src/Components/WeatherApp/WeatherAppShow'
 import '../src/assets/WeatherAppCSS/WeatherApp.css'
 const apiKey = "4d8fb5b93d4af21d66a2948710284366";
-function apiHandle () {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`;
-    fetch (url)
-    .then (res => res.json())
-}
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {weatherAppSearchText : ""}
+    this.state = {cities: []}
     this.weatherAppSearchHandle = this.weatherAppSearchHandle.bind(this)
-    
+    this.apiDataFetch = this.apiDataFetch.bind(this)
+     
+  }  
+   
+  apiDataFetch (cityName) {
+    return fetch (`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`)
+    .then (res => res.json() )
   }
+
+
   weatherAppSearchHandle (e) {
-    this.setState({weatherAppSearchText:e.target.value})
-    console.log(this.state.weatherAppSearchText)
+    console.log (e.target.value)
+   console.log(e.key)
+    if (e.key === 'Enter') {
+      this.apiDataFetch (e.target.value)
+      .then (data => {
+        console.log(data) 
+        let cities = this.state.cities
+        cities.push ({
+          city: data.name,
+          tempo:data.main.temp,
+          ico: "",
+          weatherStat:data.weather[0].description.toUpperCase(),
+        })
+        this.setState({cities:cities})
+      })   
+    }    
   }
+
   
 
   render () {
     return (
       < React.Fragment>
       <WeatherAppTitle/>
-      <WeatherAppSearch onChange={this.weatherAppSearchHandle} />
+      <WeatherAppSearch onKeyDown={this.weatherAppSearchHandle} />
       <div className="weatherAppShowMainDiv1">
-      <WeatherAppShow/>
+      {this.state.cities.map((city,ind) => <WeatherAppShow {...city} key={ind} />) }
       </div>
       
       </ React.Fragment> 
