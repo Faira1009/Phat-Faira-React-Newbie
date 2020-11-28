@@ -1,0 +1,7 @@
+.appShowList {
+  flex: 1 0 auto;
+  margin: 30px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

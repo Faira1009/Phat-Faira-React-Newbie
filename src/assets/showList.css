@@ -1,0 +1,36 @@
+.showListDiv {
+    background-color: lightgray;
+    box-shadow: -10px 5px darkgray ;
+    margin-top: 15px;
+    width: 150px;
+    height: 200px;
+    border-radius: 25px;
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+.showCity {
+    
+    width: 100%;
+    height: 30%;
+    text-align: center;
+}
+.showTemp {
+    
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    
+}
+
+.showIcon {
+    
+    width: 100%;
+    height: 20%;
+    text-align: center;
+}
+.showState {
+    
+    width: 100%;
+    height: 20%;
+    text-align: center;
+}
