@@ -1,0 +1,27 @@
+.mainDiv {
+    background-color: red;
+}
+.title {
+    background-color: rosybrown;
+}
+.subDiv {
+    background-color: sandybrown;
+}
+.pic {
+    background-color: slategrey;
+}
+.sideDiv {
+    background-color: springgreen;
+}
+.author {
+    background-color: teal;
+}
+.publisher {
+    background-color: yellow;
+}
+.published {
+    background-color: peru;
+}
+.description {
+    background-color: fuchsia;
+}
