@@ -13,12 +13,10 @@ class App extends React.Component {
     this.enterHandler = this.enterHandler.bind(this);
     this.apiDataFetch = this.apiDataFetch.bind(this);
   }
-  apiDataFetch(value) {
-    return fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=${apiKey}&units=metric`
-    ).then((res) => {
-      res.json();
-    });
+  
+  apiDataFetch(nameCity) {
+    return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${nameCity}&appid=${apiKey}&units=metric`)
+    .then((res) => {res.json()});
   }
 
   enterHandler(e) {
@@ -26,9 +24,11 @@ class App extends React.Component {
     console.log(e.target.value);
     console.log(e.key);
     if (e.key === 'Enter') {
-      
+
       this.apiDataFetch(e.target.value).then((data) => {
-        console.log(data);
+        let showc = this.state.showCities
+        showc.push (data)
+        console.log(showc);
       });
     }
   }
