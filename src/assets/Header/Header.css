@@ -1,0 +1,56 @@
+.Header {
+    background-color: mediumorchid;
+    width: 100%;
+    height: 100px;
+    display: flex;
+}
+.Logo {
+    background-color: orange;
+    width: 150px;
+}
+.HeaderRight {
+    background-color: palegoldenrod;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+.signUpTag{
+    background-color: red;
+    display: inline-block;
+    padding-right: 30px;
+}
+
+.signUpTagRight {
+    float: right;
+    display: flex;
+    background-color: lawngreen;
+    font-size: 12px;
+    font-weight: bold;
+}
+.signUpEle{
+    border-left: 2px solid darkgrey;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.searchTag {
+    background-color: darkmagenta;
+    display: flex;
+    flex: 1 0 auto;
+}
+.input {
+    background-color: darkorange;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.inputBar {
+    width: inherit;
+    height: 40%;
+    padding-left: 20px;
+}
+.cart{
+    background-color: darkslateblue;
+    width: 70px;
+    padding-right: 30px;
+}
